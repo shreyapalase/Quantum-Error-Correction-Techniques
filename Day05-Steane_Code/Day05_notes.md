@@ -1,4 +1,4 @@
- # Day 5 — Quantum Error Correction Technique: Steane Code
+ # Day 5 Notes — Quantum Error Correction Technique: Steane Code
 
  ## Overview
 
@@ -6,7 +6,7 @@
 
  The Steane Code is particularly useful because it can detect and correct **any single-qubit Pauli error**:
 
-- $ X $ — bit-flip error
+- $X$ — bit-flip error
 - $Z$ — phase-flip error
 - $Y$ — combined bit-flip and phase-flip error
 
@@ -37,9 +37,7 @@ $$
  For the Steane Code, one logical qubit is encoded into seven physical qubits:
 
  $$
-1\text{ logical qubit}
-\longrightarrow
-7\text{ physical qubits}
+ 1\text{ logical qubit}\longrightarrow7\text{ physical qubits}
 $$
 
  The seven physical qubits do not represent seven independent copies of the logical state. Instead, they collectively store the logical information in an encoded subspace.
@@ -65,11 +63,7 @@ $$
  A general logical state can be written as:
 
  $$
-|\psi\rangle_L
-=
-\alpha |0\rangle_L
-+
-\beta |1\rangle_L
+|\psi\rangle_L=\alpha |0\rangle_L+\beta |1\rangle_L
 $$
 
  where:
@@ -123,9 +117,7 @@ $$
  For the Steane Code:
 
  $$
-t =
-\left\lfloor\frac{3-1}{2}\right\rfloor
-=1.
+t =\left\lfloor\frac{3-1}{2}\right\rfloor=1.
 $$
 
  Therefore, it can correct **any single-qubit error**.
@@ -147,11 +139,7 @@ $$
  The $X$ operator is:
 
  $$
-X =
-\begin{pmatrix}
-0 & 1\\
-1 & 0
-\end{pmatrix}.
+X =\begin{pmatrix}0 & 1\\1 & 0\end{pmatrix}.
 $$
 
  It transforms:
@@ -175,11 +163,7 @@ $$
  The $Z$ operator is:
 
  $$
-Z =
-\begin{pmatrix}
-1 & 0\\
-0 & -1
-\end{pmatrix}.
+Z =\begin{pmatrix}1 & 0\\0 & -1\end{pmatrix}.
 $$
 
  It leaves $|0\\rangle$ unchanged but changes the phase of $|1\\rangle$:
@@ -201,11 +185,7 @@ $$
  The $Y$ operator is:
 
  $$
-Y =
-\begin{pmatrix}
-0 & -i\\
-i & 0
-\end{pmatrix}.
+Y =\begin{pmatrix}0 & -i\\i & 0\end{pmatrix}.
 $$
 
  It can be written as:
@@ -343,12 +323,7 @@ $$
  The classical Hamming code has a parity-check matrix that can be written as:
 
  $$
-H =
-\begin{pmatrix}
-1&0&0&1&0&1&1\\
-0&1&0&1&1&0&1\\
-0&0&1&0&1&1&1
-\end{pmatrix}.
+H =\begin{pmatrix}1&0&0&1&0&1&1\\0&1&0&1&1&0&1\\0&0&1&0&1&1&1\end{pmatrix}.
 $$
 
  Each column corresponds to one of the seven physical qubits.
@@ -465,9 +440,7 @@ Recovered logical state
  The syndrome is therefore the bridge between:
 
  $$
-\text{error detection}
-\longrightarrow
-\text{error correction}.
+ \text{error detection}\longrightarrow\text{error correction}.
 $$
 
 ---
@@ -527,9 +500,7 @@ $$
  Conceptually:
 
  $$
-Y
-\sim
-X+Z
+Y\simX+Z
 $$
 
  in terms of its error-correction behavior.
@@ -609,9 +580,7 @@ $$
  If the syndrome identifies qubit $i$, the correction operation is another $X\_i$:
 
  $$
-X_iX_i|\psi_L\rangle
-=
-|\psi_L\rangle.
+X_iX_i|\psi_L\rangle=|\psi_L\rangle.
 $$
 
  Ignoring an overall global phase where appropriate, the original encoded state is recovered.
@@ -629,11 +598,7 @@ $$
  Suppose:
 
  $$
-|\psi_L\rangle
-=
-\alpha|0\rangle_L
-+
-\beta|1\rangle_L.
+|\psi_L\rangle=\alpha|0\rangle_L+\beta|1\rangle_L.
 $$
 
  The error-correction procedure should preserve the amplitudes:
@@ -759,11 +724,7 @@ $$
  Therefore:
 
  $$
-\text{Syndrome}
-\rightarrow
-\text{Error Identification}
-\rightarrow
-\text{Correction}.
+\text{Syndrome}\rightarrow\text{Error Identification}\rightarrow\text{Correction}.
 $$
 
  Detection alone is not enough. The correction step is what returns the state to the desired code space.
@@ -830,17 +791,7 @@ $$
  The essential idea is:
 
  $$
-\boxed{
-\text{Encode}
-\rightarrow
-\text{Error}
-\rightarrow
-\text{Syndrome}
-\rightarrow
-\text{Correction}
-\rightarrow
-\text{Recover}
-}
+\boxed{\text{Encode}\rightarrow\text{Error}\rightarrow\text{Syndrome}\rightarrow\text{Correction}\rightarrow\text{Recover}}
 $$
 
 ---
@@ -873,9 +824,7 @@ $$
 - It encodes:
 
  $$
-1\text{ logical qubit}
-\rightarrow
-7\text{ physical qubits}.
+1\text{ logical qubit}\rightarrow7\text{ physical qubits}.
 $$
 
  - Its parameters are:
@@ -903,15 +852,15 @@ $$
  The central idea of the Steane Code can be summarized as:
 
  $$
-\boxed{
-\text{Seven physical qubits}
-\rightarrow
-\text{redundancy}
-\rightarrow
-\text{syndrome information}
-\rightarrow
-\text{error correction}
-}
+\boxed{\text{Seven physical qubits}\rightarrow\text{redundancy}\rightarrow\text{syndrome information}\rightarrow\text{error correction}}
 $$
 
  Quantum error correction therefore allows us to protect fragile quantum information against physical errors without directly measuring the logical quantum state.
+
+---
+
+**Written By** : Shreya Palase(codeQubit)
+
+**Date** : 20-September-2026
+
+Thank You and Enjoy Learning!
