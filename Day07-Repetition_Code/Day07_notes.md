@@ -1,9 +1,11 @@
 # Day 07 Notes - Generalized Quantum Repetition Code(five qubit)
 
+---
 
 **Subject** : Quantum Computing | Quantum Error Correction (QEC)
 **Level** : Beginner → Intermediate → Advanced
 **Focus** : Theory, mathematics, encoding, stabilizers, syndrome decoding, and logical-state measurement
+
 ---
 
 ## 1. Introduction: Why Do We Need Quantum Error Correction?
@@ -116,7 +118,7 @@ The encoded state is no longer in its original form.
 However, the error can be identified using parity measurements.
 
 ### 3.3 Three-qubit versus five-qubit repetition code
-$$
+
 |Property|	Three-qubit code	|Five-qubit code|
 |----|----|----|
 |Physical qubits|	3 |	5|
@@ -125,11 +127,12 @@ $$
 |Stabilizer generators|	2 |	4 |
 |Redundancy	|Lower|	Higher|
 |Phase-flip protection	|No|	No|
-$$
 
-**Key takeaway**: The five-qubit repetition code extends the three-qubit bit-flip code by increasing its ability to correct multiple bit-flip errors.
+
+**Key takeaway** : The five-qubit repetition code extends the three-qubit bit-flip code by increasing its ability to correct multiple bit-flip errors.
 
 ## 4. Five-Qubit Quantum Repetition Code Construction
+
 ### 4.1 Logical encoding
 
 The five-qubit repetition code uses five physical qubits to represent one logical qubit.
@@ -256,6 +259,7 @@ k=5−4=1
 Therefore, five physical qubits encode one logical qubit.
 
 ## 6. Syndrome Measurement and Error Detection
+
 ### 6.1 What is a syndrome?
 
 A syndrome is a collection of measurement outcomes from stabilizer operators.
@@ -378,7 +382,7 @@ The original encoded state is restored.
 
 ### 7.2 Recovery examples
 $$
-|Detected |error	|Syndrome|	Recovery|
+|Detected |error	|Syndrome	Recovery|
 |----|----|----|
 |None|	0000|	Identity|
 |X1|	1000|	X1|
@@ -625,35 +629,35 @@ Practical limitation: A five-qubit repetition code is not a complete fault-toler
 
 ## Test your understanding before moving to implementation or advanced codes.
 
-Q1. What is the purpose of quantum repetition encoding?
+**Q1. What is the purpose of quantum repetition encoding?**
 
 Answer: To distribute logical quantum information across multiple physical qubits so that selected errors can be detected and corrected.
 
-Q2. How many logical qubits are encoded in the five-qubit repetition code?
+**Q2. How many logical qubits are encoded in the five-qubit repetition code?**
 
 Answer: One logical qubit.
 
-Q3. How many independent stabilizer generators are required?
+**Q3. How many independent stabilizer generators are required?**
 
 Answer: Four.
 
-Q4. Which Pauli errors can this code correct?
+**Q4. Which Pauli errors can this code correct?**
 
 Answer: Up to two physical bit-flip (X) errors.
 
-Q5. Why are Z-type stabilizers used?
+**Q5. Why are Z-type stabilizers used?**
 
 Answer: Because they anticommute with X errors and therefore reveal bit-flip error syndromes.
 
-Q6. Does this code correct phase-flip errors?
+**Q6. Does this code correct phase-flip errors?**
 
 Answer: No. A single Z error acts as a logical phase flip.
 
-Q7. What does a syndrome represent?
+**Q7. What does a syndrome represent?**
 
 Answer: A collection of stabilizer measurement outcomes that identifies the error pattern.
 
-Q8. Why should we avoid directly measuring all data qubits during syndrome extraction?
+**Q8. Why should we avoid directly measuring all data qubits during syndrome extraction?**
 
 Answer: Direct measurement can destroy the encoded superposition and collapse the logical state.
 
