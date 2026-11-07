@@ -3,7 +3,9 @@
 ---
 
 **Subject** : Quantum Computing | Quantum Error Correction (QEC)
+
 **Level** : Beginner → Intermediate → Advanced
+
 **Focus** : Theory, mathematics, encoding, stabilizers, syndrome decoding, and logical-state measurement
 
 ---
@@ -685,7 +687,7 @@ Next learning milestone: Understand the Shor nine-qubit code and the five-qubit 
 
 ---
 
-**Written By ** : Shreya Palase(codeQubit)
+**Written By** : Shreya Palase(codeQubit)
 
 **Date** : 03-october-2026
 
